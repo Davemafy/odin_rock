@@ -12,6 +12,7 @@ body {
   align-items: center;
   height: 100vh;
   background: linear-gradient(to top right, #cdb4db, #bde0fe, #a2d2ff);
+  padding: 1rem;
 }
 
 .container {
@@ -23,11 +24,11 @@ body {
   overflow: hidden;
 
   border-radius: 0.6rem;
-  height: 45%;
-  width: 35%;
+  min-height: 45%;
+  min-width: 35%;
 
   border: 1px solid;
-  background: url(backgroud-noise.png);
+  background: url(backgroud-noise.png) white;
   backdrop-filter: contrast(1.2);
 }
 
@@ -49,12 +50,17 @@ h2 {
   gap: 1rem;
 }
 
+.score-board span:first-of-type{
+  color: rgb(4, 19, 4);
+  padding: 0 0.3rem;
+}
+
 .score-board span:last-of-type {
   font-weight: 300;
+  color: red;
 }
 
 .score-board:has(.first) {
-  flex-direction: row-reverse;
 }
 
 .score-board:has(.first) span:not(.first) {
@@ -67,12 +73,16 @@ h2 {
 
 div.display {
   border-top: 2px solid #6e6e6e;
-  padding-top: 1rem;
+  padding-block: 1rem;
   flex: 1;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   /* background: #bde0fe; */
   background: linear-gradient(to right, #a2d2ff9f, #cdb4dbb2);
+}
+
+.display.win{
+  background: green;
 }
 
 p {
@@ -88,7 +98,7 @@ button {
   font-weight: 600;
   padding: 0.5rem 1rem;
   background: #f8e60b;
-  flex: 1;
+  flex: 1 0 110px;
   position: relative;
   /* overflow: hidden; */
 }
@@ -113,6 +123,7 @@ button::after {
 .btn-wrapper {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 button:hover {
