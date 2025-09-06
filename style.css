@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to top right, #cdb4db, #bde0fe, #a2d2ff);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 0px #313131;
+  gap: 1rem;
+  padding-top: 2rem;
+  overflow: hidden;
+
+  border-radius: 0.6rem;
+  height: 45%;
+  width: 35%;
+
+  border: 1px solid;
+  background: url(backgroud-noise.png);
+  backdrop-filter: contrast(1.2);
+}
+
+.container > * {
+  padding-inline: 2rem;
+}
+
+h1 {
+  text-shadow: 2px 2px 0px #a2d2ff;
+}
+
+h2 {
+  font-family: monospace;
+}
+
+.score-board {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.score-board span:last-of-type {
+  font-weight: 300;
+}
+
+.score-board:has(.first) {
+  flex-direction: row-reverse;
+}
+
+.score-board:has(.first) span:not(.first) {
+  font-weight: 300;
+}
+
+.score-board:has(.first) span:last-of-type {
+  font-weight: 900;
+}
+
+div.display {
+  border-top: 2px solid #6e6e6e;
+  padding-top: 1rem;
+  flex: 1;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  /* background: #bde0fe; */
+  background: linear-gradient(to right, #a2d2ff9f, #cdb4dbb2);
+}
+
+p {
+  max-width: 300px;
+  font-size: 1.1rem;
+}
+
+button {
+  border: 1px solid;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: #f8e60b;
+  flex: 1;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+button span {
+  display: inline-block;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  height: 90%;
+  width: 90%;
+  background: #f5e430;
+  z-index: -1;
+  scale: 0;
+  border-radius: inherit;
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+button:hover {
+  transition: 350ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  /* color: #f8e60b;
+  background: #000;*/
+  scale: 1.1;
+}
+
+button:hover::after {
+  scale: 1.1;
+}
+
+button.clicked::after {
+    scale: 0;
+}
+
+button.clicked {
+  scale: 1;
+}
+
+button:hover span {
+  transition: 350ms 100ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  scale: 1.2;
+  rotate: -23deg;
+}
+
+button.clicked span {
+  display: inline-block;
+  scale: 2;
+  rotate: 0deg;
+}
+
+
+.bold {
+  font-size: 1.1rem;
+}
